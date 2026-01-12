@@ -167,14 +167,72 @@
             </div>
 
             <!-- Mobile Menu Button (Hamburger) -->
-            <button class="md:hidden text-safety focus:outline-none">
+            <button id="mobile-menu-btn" class="md:hidden text-safety focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
                     </path>
                 </svg>
             </button>
         </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-navy-700 px-6 py-4 space-y-4 shadow-lg">
+            <a href="#about"
+                class="block text-sm font-medium text-slate-500 hover:text-safety transition-colors number-prefix mobile-link"><span
+                    class="text-safety mr-1">01.</span><span data-i18n="nav_about">About</span></a>
+            <a href="#skills"
+                class="block text-sm font-medium text-slate-500 hover:text-safety transition-colors number-prefix mobile-link"><span
+                    class="text-safety mr-1">02.</span><span data-i18n="nav_skills">Skills</span></a>
+            <a href="#education"
+                class="block text-sm font-medium text-slate-500 hover:text-safety transition-colors number-prefix mobile-link"><span
+                    class="text-safety mr-1">03.</span><span data-i18n="nav_edu">Education</span></a>
+            <a href="#projects"
+                class="block text-sm font-medium text-slate-500 hover:text-safety transition-colors number-prefix mobile-link"><span
+                    class="text-safety mr-1">04.</span><span data-i18n="nav_projects">Projects</span></a>
+            <a href="#contact"
+                class="block text-sm font-medium text-slate-500 hover:text-safety transition-colors number-prefix mobile-link"><span
+                    class="text-safety mr-1">05.</span><span data-i18n="nav_contact">Contact</span></a>
+
+            <div class="h-px bg-navy-700 my-2"></div>
+
+            <!-- Mobile Language & CV -->
+            <div class="flex flex-col space-y-3">
+                <div class="text-xs font-bold tracking-wide flex items-center">
+                    <span class="text-slate-400 mr-2">Language:</span>
+                    <button onclick="setLanguage('en')" id="mob-btn-en"
+                        class="text-safety cursor-pointer hover:text-safety transition-colors font-bold">EN</button>
+                    <span class="text-slate-500 mx-1">|</span>
+                    <button onclick="setLanguage('es')" id="mob-btn-es"
+                        class="text-slate-500 cursor-pointer hover:text-safety transition-colors">ES</button>
+                </div>
+
+                <a href="Angel Suniaga - Resume.pdf" target="_blank" id="mob-btn-cv"
+                    class="block w-full text-center px-4 py-2 border border-safety text-safety text-xs font-semibold rounded hover:bg-safety hover:text-white transition-all shadow-sm"
+                    data-i18n="nav_cv">
+                    Download CV
+                </a>
+            </div>
+        </div>
     </nav>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+
 
     <!-- HERO SECTION -->
     <section id="about"
