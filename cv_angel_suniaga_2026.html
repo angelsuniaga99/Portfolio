@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Angel Suniaga</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Helvetica, Arial, sans-serif;
+            background: #fff;
+            color: var(--text-primary);
+            line-height: 1.45;
+            font-size: 10pt;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #000;
+        }
+
+        h2 {
+            font-size: 13pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 3px;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .header-contact {
+            font-size: 10pt;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .header-contact span {
+            margin: 0 4px;
+            color: #ccc;
+        }
+
+        .job-item {
+            margin-bottom: 12px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-company {
+            font-weight: 700;
+            font-size: 11pt;
+            color: #000;
+        }
+
+        .job-title {
+            font-style: italic;
+            font-weight: 600;
+            font-size: 10.5pt;
+            color: #374151;
+        }
+
+        .job-date {
+            font-weight: 600;
+            text-align: right;
+            font-size: 10pt;
+            min-width: 120px;
+        }
+
+        .job-location {
+            font-size: 10pt;
+            color: var(--text-secondary);
+        }
+
+        p {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 1.2rem;
+            margin-top: 2px;
+        }
+
+        li {
+            margin-bottom: 3px;
+            padding-left: 2px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                width: 100%;
+            }
+
+            @page {
+                margin: 0.5in;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header style="text-align: center; margin-bottom: 20px;">
+        <h1>ÁNGEL SUNIAGA</h1>
+        <div class="header-contact" style="font-weight: 600; color: #000; margin-bottom: 6px;">
+            Ingeniero Mecánico | Especialista en Logística, Almacén y Control de Inventarios
+        </div>
+        <div class="header-contact">
+            El Tigre, Anzoátegui <span>|</span> +58 416 681 0661 <span>|</span> angel.suniaga99@gmail.com
+        </div>
+    </header>
+
+    <!-- PROFILE -->
+    <section>
+        <h2>Perfil Profesional</h2>
+        <p>
+            Ingeniero Mecánico con Maestría en curso en Ciencias Contables y 6 años de experiencia en la industria
+            petrolera. Especialista en la gestión integral de almacenes, control de inventarios cíclicos y
+            administración
+            de la cadena de suministro bajo normas COVENIN y estándares internacionales (Chevron). Destaco por el diseño
+            de indicadores de gestión financiera y operativa (KPIs) utilizando herramientas avanzadas como Power BI y
+            Power Query para optimizar la toma de decisiones.
+        </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+        <h2>Experiencia Profesional</h2>
+
+        <!-- Indioil -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">OPERADORA INDIOIL, C.A</span> <span class="job-location">| El Tigre,
+                        Vzla</span>
+                </div>
+                <span class="job-date">Ago 2025 – Actualidad</span>
+            </div>
+            <div class="job-title">Técnico 2 (Operador de Pozos)</div>
+            <ul>
+                <li>Recolección y análisis de parámetros operacionales en VFD (Variadores de Frecuencia) de pozos.</li>
+                <li>Chequeo de productividad del cabezal de rotación para asegurar la continuidad operativa.</li>
+                <li>Monitoreo de presiones y ajuste de válvulas para mantener los estándares de calidad del crudo.</li>
+            </ul>
+        </div>
+
+        <!-- GP -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">GP, SERVICIOS INTEGRALES, C.A</span> <span class="job-location">| El
+                        Tigre,
+                        Vzla</span>
+                </div>
+                <span class="job-date">Abr 2025 – Ago 2025</span>
+            </div>
+            <div class="job-title">Almacenista</div>
+            <ul>
+                <li>Elaboración de indicadores financieros basados en consumos quincenales y mensuales.</li>
+                <li>Ejecución de inventarios cíclicos de materiales, consumibles y componentes para uso petrolero.</li>
+                <li>Gestión de recepción y entrega de materiales para la reparación de equipos pesados e instalaciones
+                    industriales.</li>
+                <li>Elaboración de formularios relacionados al proceso de almacén y mantenimiento de zonas.</li>
+            </ul>
+        </div>
+
+        <!-- SIO -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">SERVICIOS INTEGRALES DE OCCIDENTE (SIO)</span> <span
+                        class="job-location">| El Tigre, Vzla</span>
+                </div>
+                <span class="job-date">Nov 2024 – Mar 2025</span>
+            </div>
+            <div class="job-title">Supervisor de Almacén</div>
+            <ul>
+                <li>Supervisión de condiciones de almacenamiento según normas de Higiene y Seguridad Industrial
+                    requeridas
+                    por el cliente (CHEVRON).</li>
+                <li>Elaboración de órdenes de compras según requisición de personal operativo.</li>
+                <li>Uso y manejo del sistema contable "GALAC" para el control administrativo e inventarios.</li>
+            </ul>
+        </div>
+
+        <!-- CAMIN -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">METALMECÁNICA Y NAVAL, C.A (CAMIN)</span> <span class="job-location">| El
+                        Tigre, Vzla</span>
+                </div>
+                <span class="job-date">Nov 2023 – Sept 2024</span>
+            </div>
+            <div class="job-title">Analista de Almacén / Planner Jr.</div>
+            <ul>
+                <li>Diseño y manejo de indicadores de gestión basados en el avance de mantenimientos predictivos,
+                    preventivos y correctivos (Apoyo a Proceso de ACC).</li>
+                <li>Control de avance del proyecto y gestión de requisiciones de materiales y consumibles.</li>
+                <li>Interpretación de planos mecánicos y eléctricos para el suministro exacto de componentes en sistemas
+                    de 13.8 Kv.</li>
+                <li>Manejo de SGC y justificación de componentes "nuevos" instalados por circuito eléctrico.</li>
+            </ul>
+        </div>
+
+        <!-- TEPECA -->
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">TÉCNICA PETROLERA, C.A (TEPECA)</span> <span class="job-location">| El
+                        Tigre, Vzla</span>
+                </div>
+            </div>
+
+            <!-- Role 1 -->
+            <div style="margin-top: 4px; margin-bottom: 8px;">
+                <div style="display:flex; justify-content:space-between;">
+                    <span class="job-title">Soporte Técnico y Planificación</span>
+                    <span class="job-date">Nov 2022 – Jun 2023</span>
+                </div>
+                <ul>
+                    <li>Diseño de sistema de control y seguimiento de los recursos utilizados en los mantenimientos
+                        ejecutados.</li>
+                    <li>Recopilación y estructuración de información para la capacitación de personal técnico.</li>
+                    <li>Levantamiento de requerimientos para la ejecución de mantenimientos a equipos de Coiled Tubing.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Role 2 -->
+            <div>
+                <div style="display:flex; justify-content:space-between;">
+                    <span class="job-title">Supervisor de Operaciones de Almacén</span>
+                    <span class="job-date">Nov 2021 – Nov 2022</span>
+                </div>
+                <ul>
+                    <li>Planificación y ejecución de inventarios cíclicos y anuales; reporte de control de existencias
+                        mínimas.</li>
+                    <li>Control de stocks de materiales para operaciones de servicio a pozos petroleros.</li>
+                    <li>Desarrollo de propuestas de mejora de procesos basadas en indicadores de gestión del área.</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+        <h2>Educación</h2>
+        <div class="job-item">
+            <div class="job-header">
+                <span class="job-company">UPT "José Antonio Anzoátegui" (Convenio UNASUR)</span>
+                <span class="job-date">En curso</span>
+            </div>
+            <div class="job-title">Maestría en Ciencias Contables (5to Semestre)</div>
+        </div>
+        <div class="job-item">
+            <div class="job-header">
+                <span class="job-company">UPT "José Antonio Anzoátegui"</span>
+                <span class="job-date">2020 - 2022</span>
+            </div>
+            <div class="job-title">Ingeniero Mecánico</div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <h2>Habilidades y Software</h2>
+        <ul>
+            <li><strong>Software:</strong> Microsoft Project, Power BI, Power Query, Excel Avanzado, Galac (Sistema
+                Contable).</li>
+            <li><strong>Gestión:</strong> Planificación y Control de Mantenimiento, Indicadores de Gestión (KPIs),
+                Análisis de Datos, SGC.</li>
+            <li><strong>Técnico:</strong> Interpretación de Planos, Gestión de Almacenes, Normas COVENIN/Chevron.</li>
+            <li><strong>Idiomas:</strong> Español (Nativo), Inglés (Intermedio).</li>
+        </ul>
+    </section>
+
+</body>
+
+</html>
