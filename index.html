@@ -241,6 +241,10 @@
         <!-- Dark Overlay for Readability -->
         <div class="absolute inset-0 bg-navy-900/80"></div>
 
+        <!-- Particles Container -->
+        <div id="particles-js" class="absolute inset-0"></div>
+
+
         <div class="relative z-10 max-w-4xl mx-auto text-left">
             <p class="text-safety font-mono mb-3 animate-fade-in-up font-semibold text-sm"><span
                     data-i18n="hero_intro">Hi, my
@@ -710,8 +714,121 @@
         </div>
     </footer>
 
-    <!-- Multilingual Support Script -->
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- App Scripts -->
     <script>
+        // --- 1. Particles.js Configuration ---
+        if (document.getElementById('particles-js')) {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.2,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 2,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.15,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 0.5
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+
+        // --- 2. Multilingual Support & PDF Logic ---
         const translations = {
             en: {
                 nav_about: "About",
@@ -906,6 +1023,7 @@
         };
 
         function setLanguage(lang) {
+            // Update text content for all elements
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -914,29 +1032,55 @@
                 }
             });
 
-            // Update Toggle Styles
+            // Update HTML Lang attribute
+            document.documentElement.lang = lang;
+
+            // -- Desktop Toggle Styles --
             const btnEn = document.getElementById('btn-en');
             const btnEs = document.getElementById('btn-es');
             const btnCv = document.getElementById('btn-cv');
 
+            // -- Mobile Toggle Styles --
+            const mobBtnEn = document.getElementById('mob-btn-en');
+            const mobBtnEs = document.getElementById('mob-btn-es');
+            const mobBtnCv = document.getElementById('mob-btn-cv');
+
+            // Define styles for Active vs Inactive
+            const activeClass = ['text-safety', 'font-bold'];
+            const inactiveClass = ['text-slate-500'];
+
             if (lang === 'en') {
-                btnEn.classList.add('text-safety', 'font-bold');
-                btnEn.classList.remove('text-slate-500');
-                btnEs.classList.add('text-slate-500');
-                btnEs.classList.remove('text-safety', 'font-bold');
-                document.documentElement.lang = 'en';
+                // Desktop: Enable EN, Disable ES
+                btnEn.classList.add(...activeClass);
+                btnEn.classList.remove(...inactiveClass);
+                btnEs.classList.add(...inactiveClass);
+                btnEs.classList.remove(...activeClass);
 
-                // Set English Resume
+                // Mobile: Enable EN, Disable ES
+                mobBtnEn.classList.add(...activeClass);
+                mobBtnEn.classList.remove(...inactiveClass);
+                mobBtnEs.classList.add(...inactiveClass);
+                mobBtnEs.classList.remove(...activeClass);
+
+                // Set English Resume (Desktop & Mobile)
                 btnCv.href = "Angel Suniaga - Resume.pdf";
+                mobBtnCv.href = "Angel Suniaga - Resume.pdf";
             } else {
-                btnEs.classList.add('text-safety', 'font-bold');
-                btnEs.classList.remove('text-slate-500');
-                btnEn.classList.add('text-slate-500');
-                btnEn.classList.remove('text-safety', 'font-bold');
-                document.documentElement.lang = 'es';
+                // Desktop: Enable ES, Disable EN
+                btnEs.classList.add(...activeClass);
+                btnEs.classList.remove(...inactiveClass);
+                btnEn.classList.add(...inactiveClass);
+                btnEn.classList.remove(...activeClass);
 
-                // Set Spanish Resume
+                // Mobile: Enable ES, Disable EN
+                mobBtnEs.classList.add(...activeClass);
+                mobBtnEs.classList.remove(...inactiveClass);
+                mobBtnEn.classList.add(...inactiveClass);
+                mobBtnEn.classList.remove(...activeClass);
+
+                // Set Spanish Resume (Desktop & Mobile)
                 btnCv.href = "Angel Suniaga - Resume (ES).pdf";
+                mobBtnCv.href = "Angel Suniaga - Resume (ES).pdf";
             }
         }
     </script>
